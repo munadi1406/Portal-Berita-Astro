@@ -1,27 +1,53 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import { ViewTransitions } from 'astro:transitions';
+// import { ViewTransitions } from "astro:transitions";
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="A-News | Your Trusted Source for News" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<ViewTransitions />
-	</head>
-	<body class="bg-white">
-		<Navbar/>
-		<main>
-			<slot />
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="A-News | Your Trusted Source for News" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <!-- <ViewTransitions /> -->
+  </head>
+  <body class="bg-white">
+    <Navbar />
+    <main class="grid grid-cols-12 gap-2">
+      <div class="col-span-2 ">
+        <script type="text/javascript">
+          atOptions = {
+            key: "0654166438df0162b9a0311cb9d1420e",
+            format: "iframe",
+            height: 600,
+            width: 160,
+            params: {},
+          };
+          document.write(
+            "<scr" +
+              'ipt type="text/javascript" src="//www.topcreativeformat.com/0654166438df0162b9a0311cb9d1420e/invoke.js"></scr' +
+              "ipt>"
+          );
+        </script>
+      </div>
+      <div class="col-span-8 w-full">
+        <slot />
+      </div>
+      <div class="col-span-2 w-full">
+        <script
+          async="async"
+          data-cfasync="false"
+          src="//pl21976869.toprevenuegate.com/0d3a20bdbdcb780569386f519c022826/invoke.js"
+        ></script>
+        <div id="container-0d3a20bdbdcb780569386f519c022826"></div>
+      </div>
+    </main>
+    <Footer />
+  </body>
 </html>
