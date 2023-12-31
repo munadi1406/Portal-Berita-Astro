@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import { getNews } from "../api/getBerita";
+
+const getData = async () => {
+  const data = await getNews("terbaru");
+  return data.data.posts;
+};
+const data = await getData();
+
+---
+
+<Layout title="ANews - Astro News">
+  <div class="grid grid-cols-3 gap-2 w-3/4 m-auto py-10">
+    {
+      data.map(
+        (e: {
+          title: string;
+          thumbnail: string;
+          pubDate: string;
+          link: string;
+		  description:string;
+        }) => (
+          <Card
+            title={e.title}
+            image={e.thumbnail}
+            date={e.pubDate}
+            href={e.link}
+			desc={e.description}
+          />
+        )
+      )
+    }
+  </div>
+</Layout>

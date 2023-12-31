@@ -1,0 +1,27 @@
+---
+const kategori = [
+  "terbaru",
+  "nasional",
+  "internasional",
+  "ekonomi",
+  "olahraga",
+  "teknologi",
+  "hiburan",
+  "gayaHidup",
+];
+---
+
+<nav class="px-4 py-5 flex flex-wrap justify-between items-center sticky top-0 bg-white shadow-md">
+  <div>
+    <h1 class="text-3xl font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">A-News</h1>
+  </div>
+  <ul class="flex gap-5 flex-wrap">
+    {
+      kategori.map((e) => (
+        <li class="text-md capitalize">
+          <a href={`/kategori/${e}`}>{e}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
